@@ -622,11 +622,20 @@ $fontFamily: 'Girloy', sans-serif;
 			grid-template-columns: repeat(2, 1fr);
 		}
 		@media (max-width: 480px) {
+			justify-content: center;
+			align-items: center;
+			text-align: center;
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
 	&__column {
 		max-width: 187px;
+		@media (max-width: 767px) {
+			max-width: 100%;
+		}
+		@media (max-width: 480px) {
+			margin: 0 auto;
+		}
 	}
 	&__img {
 		margin-bottom: rem(10);
@@ -902,9 +911,6 @@ $fontFamily: 'Girloy', sans-serif;
 		@media (max-width: 767px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
-		@media (max-width: 480px) {
-			grid-template-columns: repeat(1, 1fr);
-		}
 	}
 }
 .card-document {
@@ -921,13 +927,18 @@ $fontFamily: 'Girloy', sans-serif;
 	}
 	&__img {
 		margin-bottom: rem(8);
+		display: block;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 	&__title {
 		text-align: center;
-		font-size: rem(12);
+		font-size: rem(14);
 		text-decoration: none;
 		display: block;
-		max-width: 100px;
 		margin: 0 auto;
 		color: var(--black);
 	}
@@ -967,6 +978,7 @@ $fontFamily: 'Girloy', sans-serif;
 		@media (max-width: 1024px) {
 			width: 100%;
 			height: 100%;
+			padding: em(10) 0;
 		}
 	}
 	&__body {
@@ -1263,6 +1275,15 @@ $fontFamily: 'Girloy', sans-serif;
 
 		max-width: 844px;
 		margin: 0 auto;
+
+		@media (max-width: 962px) {
+		}
+		@media (max-width: 767px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 480px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 }
 //========================================================================================================================================================
@@ -1283,7 +1304,12 @@ $fontFamily: 'Girloy', sans-serif;
 	&__nav {
 		margin-bottom: rem(15);
 		display: flex;
-		gap: rem(30);
+		@include adaptiv-value('gap', 30, 0);
+		@media (max-width: 962px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin-bottom: rem(30);
+		}
 	}
 	&__btn {
 		background: transparent;
@@ -1305,14 +1331,25 @@ $fontFamily: 'Girloy', sans-serif;
 		display: none;
 		&--active {
 			display: grid;
-			gap: rem(115);
+			@include adaptiv-value('gap', 115, 50);
 			grid-template-columns: 334px 334px;
+			@media (max-width: 762px) {
+				display: grid;
+				grid-template-columns: repeat(1, 1fr);
+			}
 		}
 	}
 	&__column {
 		display: flex;
 		gap: rem(8);
 		flex-direction: column;
+	}
+	.tabs__content {
+	}
+
+	.form__row {
+		margin: 10px 0;
+		font-size: rem(14);
 	}
 }
 //========================================================================================================================================================
@@ -1434,6 +1471,10 @@ $fontFamily: 'Girloy', sans-serif;
 //========================================================================================================================================================
 
 .news-post {
+	&__btn {
+		margin: 0 auto;
+		font-size: rem(16);
+	}
 	&__body {
 		display: grid;
 		gap: rem(20);
@@ -1474,7 +1515,7 @@ $fontFamily: 'Girloy', sans-serif;
 	}
 	&__gallery {
 		display: grid;
-		gap: rem(6) rem(12);
+		gap: rem(12);
 		grid-template-columns: repeat(2, 1fr);
 		img {
 			width: 100%;

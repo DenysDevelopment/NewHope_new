@@ -1330,6 +1330,13 @@ if (filterBtns.length > 0) {
 				`[data-filter-card=${btn.dataset.filterBtn}]`,
 			);
 			const cards = document.querySelectorAll(`[data-filter-card]`);
+			if (btn.dataset.filterBtn == 'all') {
+				cards.forEach((card) => {
+					card.classList.add('active');
+				});
+				return;
+			}
+
 			activeBtnFilter(filterBtns, btn);
 			hideFilterCards(cards);
 			showFilterCards(cardsCurrent);
