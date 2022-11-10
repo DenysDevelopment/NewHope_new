@@ -1008,10 +1008,15 @@
 }
 .help-card__img {
   width: 100%;
-  height: 154px;
+  min-height: 154px;
   border-radius: 0px 1.2142857143rem;
   overflow: hidden;
   margin-bottom: 0.7142857143rem;
+}
+@media (max-width: 480px) {
+  .help-card__img {
+    min-height: 150px;
+  }
 }
 .help-card__img img {
   width: 100%;
