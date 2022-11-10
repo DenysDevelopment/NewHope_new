@@ -1357,3 +1357,21 @@ if (filterBtns.length > 0) {
 		btnCurr.classList.add('btn--filled');
 	};
 }
+
+//========================================================================================================================================================
+
+const paymanetbtns = document.querySelectorAll('.pay-summ-select');
+
+if (paymanetbtns.length > 0) {
+	paymanetbtns.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			removeClassess(paymanetbtns);
+			btn.classList.add('pay-summ-select--active');
+		});
+	});
+	const removeClassess = (btns) => {
+		btns.forEach((btn) => {
+			btn.classList.remove('pay-summ-select--active');
+		});
+	};
+}

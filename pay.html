@@ -4,12 +4,16 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>project</title>
+		<title>Pay</title>
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 		/>
 		<link rel="stylesheet" href="./css/style.css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js"
+			defer
+		></script>
 		<script src="./js/index.js" defer></script>
 	</head>
 
@@ -169,66 +173,90 @@
 				</div>
 			</header>
 			<main class="page__content">
-				<section class="project section">
-					<h2 class="project__section-title section__title">Ты можешь помочь</h2>
+				<section class="pay-project section">
 					<div class="container">
-						<div class="project__body">
-							<div class="project__img">
-								<img src="img/project-img.jpg" alt="" />
+						<h2 class="pay-project__title"></h2>
+						<form class="pay-project__body form">
+							<div class="pay-project__column">
+								<button type="button" class="btn btn--filled">единоразово</button>
+								<button type="button" class="btn btn--border btn--disabled">
+									ежемесячно
+								</button>
+								<hr class="pay-project__line" />
+								<button
+									type="button"
+									class="form__btn--summ btn btn--border pay-summ-select pay-summ-select--active"
+								>
+									100
+								</button>
+								<button
+									type="button"
+									class="form__btn--summ btn btn--border pay-summ-select"
+								>
+									200
+								</button>
+								<button
+									type="button"
+									class="form__btn--summ btn btn--border pay-summ-select"
+								>
+									500
+								</button>
+								<button
+									type="button"
+									class="form__btn--summ btn btn--border pay-summ-select"
+								>
+									1000
+								</button>
+								<input
+									type="text"
+									class="form__other-sum form__btn--summ btn btn--border pay-summ-select"
+									placeholder="другая сумма"
+								/>
 							</div>
-							<div class="project__info">
-								<h3 class="project__title">
-									”Мой дом в Буче сгорел дотла.” Сбор на восстановление жилых домов в
-									Украине.
-								</h3>
-								<p class="project__desc">Сбор на восстановление жилых домов в Украине.</p>
-								<div class="project__info-pay">
-									<div class="project__numbers">
-										<p class="project__number">цель: <b>200 000 000 зл</b></p>
-										<p class="project__number">собрано: <b>700 000 зл</b></p>
-									</div>
-									<div class="project__progress progress">
-										<div class="progress__line" style="width: 50%"></div>
-									</div>
-									<a href="" class="project__btn btn btn--filled">подарить надежду</a>
+							<div class="pay-project__column">
+								<input type="text" class="form__input" placeholder="Имя" />
+								<input type="text" class="form__input" placeholder="Фамилия" />
+								<input
+									type="text"
+									class="form__input"
+									placeholder="Адрес электронной почты"
+								/>
+								<input type="text" class="form__input" placeholder="Номер телефона" />
+								<div class="form__row">
+									<input id="anon" type="checkbox" class="form__checkbox" />
+									<label for="anon">анонимный взнос</label>
 								</div>
+								<div class="form__row">
+									<input id="comission" type="checkbox" class="form__checkbox" />
+									<label for="comission">оплатить комиссию</label>
+								</div>
+								<div class="form__row">
+									<input id="private" type="checkbox" class="form__checkbox" />
+									<label for="private">
+										я соглашаюсь с условиями использования моих персональных данных
+									</label>
+								</div>
+								<button class="form__btn btn btn--filled" type="submit">отправить</button>
 							</div>
-						</div>
-						<div class="project__body">
-							<div class="project__text">
-								<p class="project__p">
-									Текст — зафиксированная на каком-либо материальном носителе человеческая
-									мысль; в общем плане связная и полная последовательность символов.
-								</p>
-								<p class="project__p">
-									Существуют две основные трактовки понятия «текст»: имманентная
-									(расширенная, философски нагруженная) и репрезентативная (более
-									частная). Имманентный подход подразумевает отношение к тексту как к
-									автономной реальности, нацеленность на выявление его внутренней
-									структуры. Репрезентативный — рассмотрение текста как особой формы
-									представления информации о внешней тексту действительности.
-								</p>
-								<p class="project__p">
-									В лингвистике термин «текст» используется в широком значении, включая и
-									образцы устной речи. Восприятие текста изучается в рамках лингвистики
-									текста и психолингвистики.
-								</p>
-								<a href="" class="btn btn--border">документы</a>
-							</div>
-							<div class="project__gallery">
-								<div class="project__gallery-img">
-									<img src="img/project-1.jpg" alt="" />
-								</div>
-								<div class="project__gallery-img">
-									<img src="img/project-1.jpg" alt="" />
-								</div>
-								<div class="project__gallery-img">
-									<img src="img/project-1.jpg" alt="" />
-								</div>
-								<div class="project__gallery-img">
-									<img src="img/project-1.jpg" alt="" />
-								</div>
-							</div>
+						</form>
+					</div>
+				</section>
+				<section class="payment-details section">
+					<div class="container">
+						<h2 class="payment-details__title section__title">
+							Наши платежные реквизиты
+						</h2>
+						<div class="payment-details__body">
+							<p class="payment-details__text">
+								<b>Numer Konta:</b> <br />
+								BNP PARIBAS 42 1600 1462 1746 6464 2000 0001
+							</p>
+							<p class="payment-details__text">
+								<b>Nasze rekwizyty:</b> <br />
+								KRS 0000885119 <br />
+								NIP 5272950563 <br />
+								REGON 38825528000000
+							</p>
 						</div>
 					</div>
 				</section>
